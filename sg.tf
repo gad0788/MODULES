@@ -1,5 +1,5 @@
 resource "aws_security_group" "sg-demo" {
-  name        = "web-sg"
+  name        = var.sg_name
   description = "Allow ssh and http inbound traffic"
   ingress {
     from_port   = 22

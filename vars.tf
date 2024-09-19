@@ -10,3 +10,6 @@
  variable "region_name" {
    default = "us-east-1"
  }
+ variable "sg_name" {
+   default = "web-sg"
+ }
