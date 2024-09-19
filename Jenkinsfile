@@ -27,29 +27,31 @@ pipeline {
                 sh 'terraform plan -out=tfplan -var EN=$ENVIRONMENT -var size=$INSTANCE_TYPE -var region=$REGION --no-color'
             }
         }
-
-        stage('Terraform Apply') {
-            steps {
-                // Apply the Terraform plan
-               // sh 'terraform apply -input=false tfplan'
-            }
-        }
-    }
-
-    post {
-        always {
-            // Clean up the workspace after the build
-            cleanWs()
-        }
-
-        success {
-            // Notify success
-            echo 'Terraform code applied successfully!'
-        }
-
-        failure {
-            // Notify failure
-            echo 'Terraform code failed to apply.'
-        }
     }
 }
+
+//         stage('Terraform Apply') {
+//             steps {
+//                 // Apply the Terraform plan
+//                // sh 'terraform apply -input=false tfplan'
+//             }
+//         }
+//     }
+
+//     post {
+//         always {
+//             // Clean up the workspace after the build
+//             cleanWs()
+//         }
+
+//         success {
+//             // Notify success
+//             echo 'Terraform code applied successfully!'
+//         }
+
+//         failure {
+//             // Notify failure
+//             echo 'Terraform code failed to apply.'
+//         }
+//     }
+// }
