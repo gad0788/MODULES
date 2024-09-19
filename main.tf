@@ -1,12 +1,11 @@
 resource "aws_instance" "server1" {
   #count = 3 # numbers of instances to be created
-  instance_type   = var.instance_type
+  instance_type   = var.ENVIRONMENT
   security_groups = [aws_security_group.sg-demo.name]
   ami             = var.ami
   key_name        = var.key_name
   tags = {
-    Name = "Terraform server1"
-    env  = "dev"
+    Name = var.ENVIRONMENT
   }
   user_data = file("script.sh")
 }
