@@ -1,10 +1,10 @@
 pipeline {
     agent any
 
-    environment {
-        // Define environment variables if needed
-        //TF_VAR_example = "value"
-    }
+    // environment {
+    //     // Define environment variables if needed
+    //     //TF_VAR_example = "value"
+    // }
 
     stages {
         stage('Checkout') {
