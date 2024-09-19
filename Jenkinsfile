@@ -20,11 +20,17 @@ pipeline {
                 sh 'terraform init -no-color'
             }
         }
+        stage('Terraform validate'){
+            steps{
+            // Validating the syntax
+            sh 'terraform validate'
+            }
+        }
 
         stage('Terraform Plan') {
             steps {
                 // Run Terraform plan
-                sh 'terraform plan -out=tfplan -var EN=$ENVIRONMENT -var size=$INSTANCE_TYPE -var region=$REGION --no-color'
+                sh 'terraform plan -out=tfplan -var EN=$ENVIRONMENT -var size=$INSTANCE_TYPE -var region=$REGION -no-color'
             }
         }
     }
