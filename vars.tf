@@ -7,3 +7,6 @@
  variable "key_name" {
    default = "ec2-key"
  }
+ variable "region_name" {
+   default = "us-east-1"
+ }
