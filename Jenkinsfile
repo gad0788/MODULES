@@ -12,21 +12,21 @@ pipeline {
         stage('Initialize Terraform') {
             steps {
                 // Initialize Terraform
-                sh 'terraform init'
+                sh 'terraform init -no-color'
             }
         }
 
         stage('Validate Terraform') {
             steps {
                 // Validate the Terraform configuration
-                sh 'terraform validate'
+                sh 'terraform validate -no-color'
             }
         }
 
         stage('Plan Terraform') {
             steps {
                 // Create a Terraform plan
-                sh 'terraform plan -out=tfplan'
+                sh 'terraform plan -out= -no-color'
             }
         }
 
