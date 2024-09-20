@@ -7,6 +7,26 @@ pipeline{
             sh 'terraform init -no-color'
             }
         }
+        stage("Validate"){
+            steps{
+            sh 'terraform validate -no-color'
+            }
+        }
+        stage("fmt"){
+            steps{
+            sh 'terraform fmt -no-color'
+            }
+        }
+        stage("planning the schema"){
+            steps{
+            sh 'terraform plan -no-color'
+            }
+        }
+        stage("Run successfully"){
+            steps{
+            echo 'Stage run successfully!!'
+            }
+        }
     }
     
 }
